@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Oldest 20 Records">
+        <template for:each={caseList} for:item="caseRecord">
+            <li key={caseRecord.Id}>
+            <b>{caseRecord.Origin} </b>{caseRecord.Reason} {caseRecord.Priority} {caseRecord.Subject}
+            </li>
+        </template>
+        <template if:true={errorMessage}>
+            Error Loading Case: {errorMessage}
+        </template>
+    </lightning-card>   
+</template>

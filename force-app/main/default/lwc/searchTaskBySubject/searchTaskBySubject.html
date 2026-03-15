@@ -1,0 +1,7 @@
+<template>
+    <lightning-card title="Search Task By Subject">
+        <template for:each={taskList} for:item="task">
+            <li key={task.Id}><b>{task.Id}</b> - {task.Status} - {task.Description}</li>
+        </template>
+    </lightning-card>
+</template>

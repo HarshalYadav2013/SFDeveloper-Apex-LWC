@@ -1,0 +1,7 @@
+<template>
+    <lightning-card title="My Account Related Task">
+        <template for:each={taskList} for:item="taskRec">
+            {taskRec.Subject} - {taskRec.ActivityDate} - {taskRec.Description}
+        </template>
+    </lightning-card>
+</template>

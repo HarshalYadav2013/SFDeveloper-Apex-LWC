@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Search, Sort, and Filter" icon-name="utility:search">
+        <div class="slds-p-around_medium">
+        <div class="slds-grid slds-wrap slds-gutters slds-p-bottom_medium">
+            <div class="slds-col slds-size_1-of-4">
+            <lightning-input label="Search" placeholder="Search using a word" value={searchText} onchange={handleSearch}></lightning-input>
+            </div>
+            <div class="slds-col slds-size_2-of-4">
+                <lightning-combobox name="filterby" label="Filter By" value={category} placeholder="Select Category To Filter By" 
+                options={categoryOptions} onchange={handleCategory}> </lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_1-of-4">
+                <lightning-combobox name="sortBy" label="Sort By" value={sortBy} placeholder="Select Field To Sort By"
+                options={sortOptions} onchange={handleSort}></lightning-combobox>
+            </div>
+        </div>
+        <template if:true={filterData.length}>
+            <lightning-datatable key-field="id" data={filterData} columns={columns} hide-checkbox-column></lightning-datatable>
+        </template>
+        <template if:false={filterData.length}>
+            No Result. Check filter Critarea.
+        </template>
+        </div>
+
+
+    </lightning-card>
+</template>

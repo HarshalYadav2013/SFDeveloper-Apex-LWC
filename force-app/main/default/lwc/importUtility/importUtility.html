@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Import Utility">
+        <img src={src}/>
+
+        <template lwc:if={showInProd}>
+            Welcome to Production Environment!
+            </template>
+            <template lwc:else>
+            You are in Sandbox/Dev Environment!
+        </template> 
+    </lightning-card>
+</template>
